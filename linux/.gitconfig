@@ -1,0 +1,19 @@
+[user]
+    name = gerard sychay
+    email = hellogerard@gmail.com
+[core]
+    ;autocrlf = input
+    autocrlf = false
+    safecrlf = true
+    editor = vi
+    excludesfile = ~/.gitignore
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[receive]
+    denycurrentbranch = warn

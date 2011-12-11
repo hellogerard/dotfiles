@@ -1,0 +1,17 @@
+[user]
+    name = gerard sychay
+    email = hellogerard@gmail.com
+[core]
+    ;autocrlf = true
+    autocrlf = false
+    safecrlf = true
+    editor = gvim
+    excludesfile = ~/.gitignore
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
