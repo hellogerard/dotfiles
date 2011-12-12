@@ -17,6 +17,9 @@ set hlsearch
 " Incremental search
 set incsearch
 
+" Backspace through everything in insert mode
+set backspace=indent,eol,start
+
 " Number of spaces to use for tab characters
 set tabstop=4
 
@@ -116,4 +119,4 @@ autocmd FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 "colorscheme elflord
 
 " Set gvim font
-"set gfn=Courier_New:h10:b:cANSI
+set gfn=Courier_New:h9:w5:b:cANSI

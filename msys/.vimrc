@@ -17,6 +17,9 @@ set hlsearch
 " Incremental search
 set incsearch
 
+" Backspace through everything in insert mode
+set backspace=indent,eol,start
+
 " Number of spaces to use for tab characters
 set tabstop=4
 
@@ -77,6 +80,15 @@ syntax on
 " Vim will look for filetype plugins
 filetype plugin on
 
+" Use vim-included diff for diffing files
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = ''
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  silent execute '!diff -a ' . opt . v:fname_in . ' ' . v:fname_new . ' > ' . v:fname_out
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set filetype options (mostly indentation)
@@ -97,19 +109,14 @@ autocmd FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Might not want to include below for shell accounts
+" GUI vim options - might not want to include below for shell accounts
 "
 
-" Set gvim window colors and font
+" Set gvim highlighting
 "highlight Normal guibg=grey95
-colorscheme desert
-set gfn=Courier_New:h9:w5:b:cANSI
 
-" Use vim-included diff for diffing files
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = ''
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  silent execute '!diff -a ' . opt . v:fname_in . ' ' . v:fname_new . ' > ' . v:fname_out
-endfunction
+" Set gvim color scheme
+colorscheme desert
+
+" Set gvim font
+set gfn=Courier_New:h9:w5:b:cANSI
