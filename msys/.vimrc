@@ -102,7 +102,7 @@ autocmd FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 
 " Set gvim window colors and font
 "highlight Normal guibg=grey95
-"colorscheme elflord
+colorscheme desert
 set gfn=Courier_New:h9:w5:b:cANSI
 
 " Use vim-included diff for diffing files
