@@ -45,6 +45,12 @@ set smartindent
 " q = allow formatting with "gq"
 set formatoptions=croq
 
+" Turn off line wrapping
+set nowrap
+
+" Always open vertically split files on the right-hand side
+set splitright
+
 " Maximum width of text that is being inserted
 set textwidth=80
 
