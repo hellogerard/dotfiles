@@ -2,16 +2,17 @@
     name = gerard sychay
     email = hellogerard@gmail.com
 [core]
-    ;autocrlf = true
-    autocrlf = false
+    autocrlf = input
     safecrlf = true
-    editor = gvim
+    editor = mvim -f --nomru -c \"au VimLeave * !open -a Terminal\"
     excludesfile = ~/.gitignore
 [alias]
     co = checkout
     ci = commit
     st = status
     br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    hist = log --pretty=format:\"%Cred%h%Creset %C(bold blue)%ad%Creset | %s%C(yellow)%d%Creset %Cgreen[%an]%Creset\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
+[color]
+    ui = true
