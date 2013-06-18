@@ -19,3 +19,6 @@ export PS1='\[\e[0;33m\][\u@\H \W]\[\e[1;32m\]$(__git_ps1 " (%s)")\[\e[0m\]$ '
 
 source ~/.git-completion.bash
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+if [ -f /usr/local/share/npm/lib/node_modules/meteorite/completions/mrt.bash ]; then
+  . /usr/local/share/npm/lib/node_modules/meteorite/completions/mrt.bash
+fi

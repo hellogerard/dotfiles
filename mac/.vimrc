@@ -110,9 +110,11 @@ autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType haml setlocal shiftwidth=2 tabstop=2 
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 
 autocmd FileType sass setlocal shiftwidth=2 tabstop=2 
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.json set filetype=javascript
 autocmd BufRead,BufNewFile *.phtml set shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.slimbars set filetype=slim
 autocmd FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
@@ -144,7 +146,7 @@ let g:ctrlp_match_window_reversed = 0
 
 " In addition to |'wildignore'|, use this for files and directories you want
 " only CtrlP to not show. Use regexp to specify the patterns:
-let g:ctrlp_custom_ignore = '\.git\|\.svn\|\.log\|node_modules\|vendor'
+let g:ctrlp_custom_ignore = '\.meteor\|\.git\|\.svn\|\.log\|.DS_Store\|node_modules\|vendor\|data'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
