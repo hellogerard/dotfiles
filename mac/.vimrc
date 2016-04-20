@@ -21,10 +21,10 @@ set incsearch
 set backspace=indent,eol,start
 
 " Number of spaces to use for tab characters
-set tabstop=4
+set tabstop=2
 
 " Number of spaces to use for indents
-set shiftwidth=4
+set shiftwidth=2
 
 " Use shiftwidth spaces for indents instead of tabs
 set expandtab
@@ -100,24 +100,20 @@ endfunction
 " Set filetype options (mostly indentation)
 "
 
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 
-autocmd FileType smarty setlocal shiftwidth=2 tabstop=2 
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 
-autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 
-autocmd FileType haml setlocal shiftwidth=2 tabstop=2 
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2 
-autocmd FileType sass setlocal shiftwidth=2 tabstop=2 
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 
+autocmd FileType php setlocal shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.cjsx set filetype=coffee
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.json set filetype=javascript
-autocmd BufRead,BufNewFile *.phtml set shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile *.slimbars set filetype=slim
+autocmd BufRead,BufNewFile *.handlebars set filetype=html
+autocmd BufRead,BufNewFile *.gs set filetype=javascript
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.phtml set filetype=html
 autocmd FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
+" Apply jsx syntax highlighting to js files too
+let g:jsx_ext_required = 0 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -146,7 +142,7 @@ let g:ctrlp_match_window_reversed = 0
 
 " In addition to |'wildignore'|, use this for files and directories you want
 " only CtrlP to not show. Use regexp to specify the patterns:
-let g:ctrlp_custom_ignore = '\.meteor\|\.git\|\.svn\|\.log\|.DS_Store\|node_modules\|vendor\|data'
+let g:ctrlp_custom_ignore = '\.meteor\|\.git\|\.svn\|\.demeteorized\|\.log\|.DS_Store\|node_modules\|vendor\|data\|dump\|.gagarin'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
